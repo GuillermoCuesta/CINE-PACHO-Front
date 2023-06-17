@@ -1,0 +1,32 @@
+@layer base {
+  table {
+    @apply w-full;
+  }
+
+  thead {
+    @apply hidden lg:table-header-group text-blue-001;
+  }
+
+  tr {
+    @apply max-w-full block relative border-b-4 border-[#D1D3D4]
+      lg:table-row lg:border-b-0  shadow-searchBar lg:shadow-none p-2 mb-10 rounded-lg;
+  }
+
+  tr:last-child {
+    @apply border-b-0;
+  }
+
+  td {
+    @apply flex justify-between text-right align-top border-b border-[#D1D3D4]
+      lg:table-cell lg:text-left lg:align-middle lg:border-b-0 text-xs lg:text-base;
+  }
+
+  td:last-child {
+    @apply border-b-0;
+  }
+
+  td:before {
+    content: attr(data-label);
+    @apply font-bold text-left lg:hidden text-blue-001 text-xs py-2;
+  }
+}

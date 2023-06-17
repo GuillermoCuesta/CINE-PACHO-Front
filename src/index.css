@@ -1,0 +1,29 @@
+@import './css/_table.css';
+@import './css/_scrollbars.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.list::-webkit-scrollbar {
+	display: none;
+}
+@layer base {
+	@font-face {
+		font-family: Interstate;
+		font-weight: 400;
+		src: url(./assets/fonts/Interstate-Regular.otf);
+	}
+}
+input[type='date']::-webkit-calendar-picker-indicator {
+	color: transparent;
+	background: none;
+	z-index: 1;
+}
+
+body {
+	background-color: white !important;
+}
+.sigCanvas {
+	width: 100%;
+	height: 160px;
+}
