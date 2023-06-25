@@ -4,7 +4,7 @@ import Button from "../../../components/Button";
 import { ReactElement } from "react";
 import TextInput from '../../../components/Input';
 
-export const LogInView: React.FC = (): ReactElement => {
+export const ResetPasswordView: React.FC = (): ReactElement => {
 
   return (
     <div className="w-full h-full flex lg:justify-center justify-end lg:items-center bg-white flex-col-reverse lg:flex-row">

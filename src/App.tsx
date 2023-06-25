@@ -2,6 +2,8 @@ import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 
 import { LogInView } from "./views/Auth/LogIn";
 import { ReactElement } from "react";
+import { RegisterView } from "./views/Auth/Register";
+import { ResetPasswordView } from './views/Auth/ResetPassword/index';
 import { RoutesPathsEnum } from "./helpers/RoutePaths";
 import { Toaster } from "react-hot-toast";
 
@@ -13,8 +15,8 @@ const App: React.FC = (): ReactElement => {
         <Routes>
 
           <Route path={RoutesPathsEnum.REGISTER}
-            element={<></>}
-          />
+            element={<RegisterView/>}
+            />
           <Route path={RoutesPathsEnum.HOME}
             element={<></>}
           />
@@ -23,7 +25,7 @@ const App: React.FC = (): ReactElement => {
           />
           <Route
             path={RoutesPathsEnum.RESETPASSWORD}
-            element={<></>}
+            element={<ResetPasswordView/>}
           />
           <Route path="*" element={<Navigate replace to="/auth/login" />} />
         </Routes>
