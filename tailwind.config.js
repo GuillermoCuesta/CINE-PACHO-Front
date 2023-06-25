@@ -1,10 +1,8 @@
 // eslint-disable-next-line no-undef
 module.exports = {
-	content: ['./src/**/*.{js,jsx,ts,tsx}'],
+	content: ["./src/**/*.{js,jsx,ts,tsx}", "./index.html"],
 	theme: {
-		fontFamily: {
-			sans: ['interstate', 'sans-serif'],
-		},
+		
 		extend: {
 			gridTemplateColumns: {
 				// Columns size to cards header into home
