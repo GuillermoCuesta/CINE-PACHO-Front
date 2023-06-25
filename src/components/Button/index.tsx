@@ -1,11 +1,11 @@
 import { ReactElement } from "react";
 
 type typeButton =
- 
+
   | "bluePrimary"
   | "disabled"
   | "enabled"
-   
+
 interface PropsButton {
   buttonType?: typeButton; // Tipo de boton
   content: string; // Texto del botón
@@ -28,7 +28,7 @@ const Button = ({
       <button
         type={type}
         onClick={onClick}
-        className={`w-full px-5 py-3 bg-blue-001 text-white rounded-xl lg:text-lg font-bold  ${className}`}
+        className={`w-full px-5 py-3 bg-blue-001 text-white rounded-xl lg:text-lg font-bold bg-blue-001  ${className}`}
       >
         {" "}
         {content}{" "}
@@ -63,7 +63,7 @@ const Button = ({
   return (
     <button type={type} onClick={onClick} className={` font-bold ${className}`}>
       {" "}
-        {content}{" "}         {content}{" "}
+      {content}{" "}
     </button>
   );
 };
