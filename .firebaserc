@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "cine-pacho"
-  }
+    "default": "cine-pacho-4e8d3",
+    "cine-pacho": "cine-pacho-4e8d3"
+  },
+  "targets": {},
+  "etags": {}
 }
