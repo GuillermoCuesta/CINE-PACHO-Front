@@ -1,7 +1,7 @@
 import { ReactElement } from "react";
 import GridCines from "../../components/GridCines";
 
-export const ResetPasswordView: React.FC = (): ReactElement => {
+export const Home: React.FC = (): ReactElement => {
 
   return (
     <>
