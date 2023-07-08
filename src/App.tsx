@@ -20,6 +20,21 @@ const App: React.FC = (): ReactElement => {
           {/* Asigna MultiplexView a la ruta correspondiente */}
           <Route path={RoutesPathsEnum.MULTIPLEX} element={<MultiplexView />} />
 
+          <Route path={RoutesPathsEnum.REGISTER}
+            element={<RegisterView/>}
+            />
+          <Route path={RoutesPathsEnum.HOME}
+
+            element={<RegisterView/>} //CAMBIAR RUTA DEPENDIENDO DEL MODULO QUE SE DESEE VER 
+
+          />
+          <Route path={RoutesPathsEnum.LOGIN}
+            element={<LogInView/>}
+          />
+          <Route
+            path={RoutesPathsEnum.RESETPASSWORD}
+            element={<ResetPasswordView/>}
+          />
           <Route path="*" element={<Navigate replace to="/auth/login" />} />
         </Routes>
       </BrowserRouter>

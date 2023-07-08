@@ -1,0 +1,6 @@
+.card-grid-cines {
+    display:flex;
+    flex-direction:row;
+    flex-wrap: wrap;
+
+} 

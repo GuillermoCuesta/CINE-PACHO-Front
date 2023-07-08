@@ -1,10 +1,12 @@
 import { ReactElement } from "react";
+import GridCines from "../../components/GridCines";
 
 export const Home: React.FC = (): ReactElement => {
 
   return (
-    <div className="w-full h-full flex lg:justify-center justify-end lg:items-center bg-white flex-col-reverse lg:flex-row">
-      
-    </div>
+    <>
+      {/* <h1>Hola mundo si funciona el home</h1> */}
+      <GridCines></GridCines>
+    </>
   );
 };
