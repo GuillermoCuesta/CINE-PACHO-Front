@@ -1,5 +1,5 @@
 enum RoutesPathsEnum {
-  HOME = "/",
+  HOME = "/home",
   LOGIN = "/auth/login",
   REGISTER = "/auth/register",
   RESETPASSWORD = "/auth/reset_password",

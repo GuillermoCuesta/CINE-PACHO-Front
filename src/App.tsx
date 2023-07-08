@@ -6,6 +6,7 @@ import { RegisterView } from "./views/Auth/Register";
 import { ResetPasswordView } from './views/Auth/ResetPassword/index';
 import { RoutesPathsEnum } from "./helpers/RoutePaths";
 import { Toaster } from "react-hot-toast";
+import { Home } from "./views/Home";
 
 const App: React.FC = (): ReactElement => {
 
@@ -18,7 +19,7 @@ const App: React.FC = (): ReactElement => {
             element={<RegisterView/>}
             />
           <Route path={RoutesPathsEnum.HOME}
-            element={<></>}
+            element={<Home/>} //CAMBIAR RUTA DEPENDIENDO DEL MODULO QUE SE DESEE VER 
           />
           <Route path={RoutesPathsEnum.LOGIN}
             element={<LogInView/>}
