@@ -3,6 +3,7 @@ import Button from "../../../components/Button";
 import { ReactElement } from "react";
 import TextInput from "../../../components/Input";
 
+
 export const LogInView: React.FC = (): ReactElement => {
   const handleSubmit = async (values: { email: any; password: any; }) => {
     const data = {
@@ -12,7 +13,7 @@ export const LogInView: React.FC = (): ReactElement => {
 
     try {
       const response = await fetch(
-        "https://webapicinepacho.azurewebsites.net/api/usuarios/iniciar-sesion",
+        "https://webapicinepacho-cinepacho.azurewebsites.net/api/usuarios/iniciar-sesion",
         {
           method: "POST",
           headers: {
@@ -24,9 +25,9 @@ export const LogInView: React.FC = (): ReactElement => {
 
       if (response.ok) {
         // El inicio de sesión fue exitoso
-        console.log("Inicio de sesión exitoso");
-        //<Route path=’/auth/login’> Element=<Navigate to=»/Home»/>
+        console.log("Inicio de sesión exitoso");  
         
+        window.location.href = "https://cine-pacho-4e8d3.web.app/auth/multiplex";      
       } else if (response.status === 400) {
         // Credenciales inválidas
         console.log("Credenciales de inicio de sesión inválidas");

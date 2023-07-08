@@ -3,7 +3,10 @@ import Button from "../../../components/Button";
 import { ReactElement } from "react";
 import TextInput from "../../../components/Input";
 
+
+
 export const RegisterView: React.FC = (): ReactElement => {
+
   const handleSubmit = async (values: { userId: any; email: any; password: any; }) => {
     const data = {
       codEmpleado: values.userId,
@@ -13,7 +16,7 @@ export const RegisterView: React.FC = (): ReactElement => {
 
     try {
       const response = await fetch(
-        "https://webapicinepacho.azurewebsites.net/api/usuarios/registrar",
+        "https://webapicinepacho-cinepacho.azurewebsites.net/api/usuarios/registrar",
         {
           method: "POST",
           headers: {
@@ -26,6 +29,7 @@ export const RegisterView: React.FC = (): ReactElement => {
       if (response.ok) {
         // El registro fue exitoso, puedes realizar acciones adicionales aquí
         console.log("Registro exitoso");
+        window.location.href = "/login";
       } else {
         // Ocurrió un error en la API, puedes manejarlo aquí
         console.log("Error en el registro");

@@ -20,6 +20,6 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src"],
+  "include": ["src", "src/views/Auth/LogIn", "src/views/Auth/Register"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
