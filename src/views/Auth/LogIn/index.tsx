@@ -2,6 +2,7 @@ import { Form, Formik } from "formik";
 import Button from "../../../components/Button";
 import { ReactElement } from "react";
 import TextInput from "../../../components/Input";
+import { useNavigate } from 'react-router-dom';
 
 export const LogInView: React.FC = (): ReactElement => {
   const handleSubmit = async (values: { email: any; password: any; }) => {
@@ -17,15 +18,18 @@ export const LogInView: React.FC = (): ReactElement => {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Methods': 'GET, HEAD, POST, PUT, DELETE, CONNECT, OPTIONS, TRACE',
+            'Access-Control-Allow-Headers': 'Content-Type, Authorization, X-Requested-With',
           },
           body: JSON.stringify(data),
         }
       );
-
       if (response.ok) {
+        const navigate = useNavigate();
         // El inicio de sesión fue exitoso
         console.log("Inicio de sesión exitoso");
-        //<Route path=’/auth/login’> Element=<Navigate to=»/Home»/>
+        navigate('/home');
         
       } else if (response.status === 400) {
         // Credenciales inválidas
@@ -37,6 +41,7 @@ export const LogInView: React.FC = (): ReactElement => {
     } catch (error) {
       // Error en la comunicación con la API
       console.log("Error en la comunicación con la API");
+      //console.log(error);
     }
   };
 
