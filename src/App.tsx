@@ -24,8 +24,7 @@ const App: React.FC = (): ReactElement => {
             element={<RegisterView/>}
             />
           <Route path={RoutesPathsEnum.HOME}
-
-            element={<RegisterView/>} //CAMBIAR RUTA DEPENDIENDO DEL MODULO QUE SE DESEE VER 
+            element={<Home/>} //CAMBIAR RUTA DEPENDIENDO DEL MODULO QUE SE DESEE VER 
 
           />
           <Route path={RoutesPathsEnum.LOGIN}

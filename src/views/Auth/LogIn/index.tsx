@@ -2,6 +2,7 @@ import { Form, Formik } from "formik";
 import Button from "../../../components/Button";
 import { ReactElement } from "react";
 import TextInput from "../../../components/Input";
+import { useNavigate } from 'react-router-dom';
 
 
 export const LogInView: React.FC = (): ReactElement => {
@@ -18,14 +19,22 @@ export const LogInView: React.FC = (): ReactElement => {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Methods': 'GET, HEAD, POST, PUT, DELETE, CONNECT, OPTIONS, TRACE',
+            'Access-Control-Allow-Headers': 'Content-Type, Authorization, X-Requested-With',
           },
           body: JSON.stringify(data),
         }
       );
-
       if (response.ok) {
+        const navigate = useNavigate();
         // El inicio de sesión fue exitoso
+<<<<<<< HEAD
         console.log("Inicio de sesión exitoso");  
+=======
+        console.log("Inicio de sesión exitoso");
+        navigate('/home');
+>>>>>>> de6f5d8a0e51327c35d719e9ec97d384bdbcfaa6
         
         window.location.href = "https://cine-pacho-4e8d3.web.app/auth/multiplex";      
       } else if (response.status === 400) {
@@ -38,6 +47,7 @@ export const LogInView: React.FC = (): ReactElement => {
     } catch (error) {
       // Error en la comunicación con la API
       console.log("Error en la comunicación con la API");
+      //console.log(error);
     }
   };
 
