@@ -5,7 +5,7 @@ export const MultiplexView: React.FC = () => {
     const [sucursales, setSucursales] = useState([]);
 
     useEffect(() => {
-      fetch('https://webapicinepacho.azurewebsites.net/api/multiplex')
+      fetch('https://webapicinepacho-cinepacho.azurewebsites.net/api/multiplex')
         .then(response => response.json())
         .then(data => setSucursales(data))
         .catch(error => console.log(error));

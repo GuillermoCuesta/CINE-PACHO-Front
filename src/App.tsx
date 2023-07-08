@@ -6,6 +6,7 @@ import { ResetPasswordView } from './views/Auth/ResetPassword/index';
 import { RoutesPathsEnum } from "./helpers/RoutePaths";
 import { Toaster } from "react-hot-toast";
 import { MultiplexView } from "./views/Auth/Multiplex/multiplex";
+import { Home } from "./views/Home";
 
 const App: React.FC = (): ReactElement => {
 

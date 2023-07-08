@@ -29,12 +29,8 @@ export const LogInView: React.FC = (): ReactElement => {
       if (response.ok) {
         const navigate = useNavigate();
         // El inicio de sesión fue exitoso
-<<<<<<< HEAD
-        console.log("Inicio de sesión exitoso");  
-=======
         console.log("Inicio de sesión exitoso");
         navigate('/home');
->>>>>>> de6f5d8a0e51327c35d719e9ec97d384bdbcfaa6
         
         window.location.href = "https://cine-pacho-4e8d3.web.app/auth/multiplex";      
       } else if (response.status === 400) {
