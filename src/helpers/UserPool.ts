@@ -1,4 +1,4 @@
-import {
+/*import {
   CognitoUserPool,
   ICognitoUserPoolData,
 } from "amazon-cognito-identity-js";
@@ -8,4 +8,4 @@ const poolData: ICognitoUserPoolData = {
   ClientId: import.meta.env.VITE_COGNITO_CLIENT_ID,
 };
 
-export default new CognitoUserPool(poolData);
+export default new CognitoUserPool(poolData);*/

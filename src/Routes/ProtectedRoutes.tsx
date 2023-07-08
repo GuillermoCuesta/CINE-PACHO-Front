@@ -1,4 +1,4 @@
-import { Navigate, Outlet, useLocation } from "react-router-dom";
+/*import { Navigate, Outlet, useLocation } from "react-router-dom";
 import { ReactElement, useEffect, useState } from "react";
 
 import { Loading } from "~/components/Loading";
@@ -33,4 +33,4 @@ export const Protectedroutes: React.FC = (): ReactElement => {
       <Outlet />
     </div>
   );
-};
+};*/

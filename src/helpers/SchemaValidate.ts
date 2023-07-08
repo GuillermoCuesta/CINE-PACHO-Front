@@ -1,6 +1,6 @@
 import * as yup from "yup";
 
-import moment from "moment";
+//import moment from "moment";
 
 export const InputSchema = yup.object().shape({
   email: yup
@@ -29,7 +29,7 @@ export const firstLoginSchema = yup.object().shape({
   confirmPassword: yup
     .string()
     .required("Campo obligatorio")
-    .oneOf([yup.ref("newPassword"), null], "Las contraseñas no coinciden"),
+    .oneOf([yup.ref("newPassword")], "Las contraseñas no coinciden"),
 });
 
 export const ForgotEmailValidator = yup.object().shape({
@@ -45,7 +45,7 @@ export const ResetPassword = yup.object().shape({
   confirmpassword: yup
     .string()
     .required("Campo obligatorio")
-    .oneOf([yup.ref("password"), null], "Las contraseñas no coinciden"),
+    .oneOf([yup.ref("password")], "Las contraseñas no coinciden"),
 });
 export const RegisterCreditCard = yup.object().shape({
   number: yup
