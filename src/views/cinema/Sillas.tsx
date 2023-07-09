@@ -10,6 +10,44 @@ type SeatProps = {
   removeSeat: (row: number, column: number) => void;
 };
 
+const salas = [
+  { id: 1, name: "Sala 1", seats: 60, available: 60 },
+  { id: 2, name: "Sala 2", seats: 60, available: 60 },
+  { id: 3, name: "Sala 3", seats: 60, available: 60 },
+  { id: 4, name: "Sala 4", seats: 60, available: 60 },
+  { id: 5, name: "Sala 5", seats: 60, available: 60},
+];
+
+function SalaSelect() {
+  const [selected, setSelected] = useState(null);
+
+  const handleSelect = (id) => {
+    setSelected(id);
+    alert(`Has seleccionado la ${salas.find((sala) => sala.id === id).name}`);
+  };
+  return (
+    <div className="container mx-auto p-4">
+      <h1 className="text-2xl font-bold text-center mb-4">
+        Selección de una sala de cine
+      </h1>
+      <div className="grid grid-cols-2 gap-4">
+        {salas.map((sala) => (
+          <div
+            key={sala.id}
+            className={`p-4 border rounded-lg cursor-pointer ${
+              selected === sala.id ? "bg-green-100" : "bg-gray-100"
+            }`}
+            onClick={() => handleSelect(sala.id)}
+          >
+            <div className="flex items-center justify-between mb-2">
+              <span className="text-gray-700">{sala.name}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
 // Un componente que representa una silla de cine
 function Seat(props: SeatProps) {
   // El estado de la silla: disponible, seleccionada o reservada
@@ -142,6 +180,7 @@ export const SillasView: React.FC = (): ReactElement => {
       <div className="lg:w-1/2 w-full flex justify-center items-center mt-6 lg:mt-0">
       <div className="flex flex-col gap-10 items-center w-full">
             <h1 className="text-blue-001 font-bold lg:text-5xl text-xl">¡Bienvenid@ a la sala de cine!</h1>
+            <SalaSelect/>
             <h4 className="text-blue-001 text-lg font-thin w-1/2 text-center">
               Por favor selecciona las sillas que quieras reservar
             </h4>
