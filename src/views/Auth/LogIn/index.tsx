@@ -6,6 +6,10 @@ import { useNavigate } from 'react-router-dom';
 
 
 export const LogInView: React.FC = (): ReactElement => {
+
+  const navigate = useNavigate();
+  const homeLink = "https://cine-pacho-4e8d3.web.app/home/index";
+
   const handleSubmit = async (values: { email: any; password: any; }) => {
     const data = {
       correoUsuario: values.email,
@@ -27,12 +31,12 @@ export const LogInView: React.FC = (): ReactElement => {
         }
       );
       if (response.ok) {
-        const navigate = useNavigate();
         // El inicio de sesión fue exitoso
         console.log("Inicio de sesión exitoso");
-        navigate('/home');
-        
-        window.location.href = "https://cine-pacho-4e8d3.web.app/auth/multiplex";      
+        //navigate('/home');
+        navigate(homeLink);
+
+        window.location.href = "https://cine-pacho-4e8d3.web.app/home/index";      
       } else if (response.status === 400) {
         // Credenciales inválidas
         console.log("Credenciales de inicio de sesión inválidas");
