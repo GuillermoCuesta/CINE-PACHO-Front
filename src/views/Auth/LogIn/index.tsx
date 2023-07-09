@@ -30,14 +30,14 @@ export const LogInView: React.FC = (): ReactElement => {
           body: JSON.stringify(data),
         }
       );
-      if (response.ok) {
+      if (response.status === 200) {
         // El inicio de sesión fue exitoso
         console.log("Inicio de sesión exitoso");
         //navigate('/home');
         navigate(homeLink);
 
         window.location.href = "https://cine-pacho-4e8d3.web.app/home/index";      
-      } else if (response.status === 400) {
+      } else if (response.status === 500) {
         // Credenciales inválidas
         console.log("Credenciales de inicio de sesión inválidas");
       } else {

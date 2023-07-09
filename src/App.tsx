@@ -5,7 +5,7 @@ import { RegisterView } from "./views/Auth/Register";
 import { ResetPasswordView } from './views/Auth/ResetPassword/index';
 import { RoutesPathsEnum } from "./helpers/RoutePaths";
 import { Toaster } from "react-hot-toast";
-import { MultiplexView } from "./views/Auth/Multiplex/multiplex";
+//import { MultiplexView } from "./views/Auth/Multiplex/multiplex";
 import { Home } from "./views/Home";
 
 const App: React.FC = (): ReactElement => {
@@ -19,7 +19,7 @@ const App: React.FC = (): ReactElement => {
           <Route path={RoutesPathsEnum.RESETPASSWORD} element={<ResetPasswordView />} />
 
           {/* Asigna MultiplexView a la ruta correspondiente */}
-          <Route path={RoutesPathsEnum.MULTIPLEX} element={<MultiplexView />} />
+          <Route path={RoutesPathsEnum.HOME} element={<Home/>} />
 
           <Route path={RoutesPathsEnum.REGISTER}
             element={<RegisterView/>}
