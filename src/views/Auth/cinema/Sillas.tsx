@@ -1,6 +1,5 @@
-import { useState } from "react";
 import { ReactElement } from "react";
-
+import { useState } from "react";
 
 // Un tipo que representa las props del componente Seat
 type SeatProps = {
@@ -15,7 +14,7 @@ const salas = [
   { id: 2, name: "Sala 2", seats: 60, available: 60 },
   { id: 3, name: "Sala 3", seats: 60, available: 60 },
   { id: 4, name: "Sala 4", seats: 60, available: 60 },
-  { id: 5, name: "Sala 5", seats: 60, available: 60},
+  { id: 5, name: "Sala 5", seats: 60, available: 60 },
 ];
 
 function SalaSelect() {
@@ -34,9 +33,8 @@ function SalaSelect() {
         {salas.map((sala) => (
           <div
             key={sala.id}
-            className={`p-4 border rounded-lg cursor-pointer ${
-              selected === sala.id ? "bg-green-100" : "bg-gray-100"
-            }`}
+            className={`p-4 border rounded-lg cursor-pointer ${selected === sala.id ? "bg-green-100" : "bg-gray-100"
+              }`}
             onClick={() => handleSelect(sala.id)}
           >
             <div className="flex items-center justify-between mb-2">
@@ -111,7 +109,7 @@ function Cinema(props: CinemaProps) {
     // Crea una copia del archivo JSON actual
     let newSeats = { ...seats };
     // Agrega la silla con su fila y columna como clave y valor
-    newSeats[`${row}-${column}`] = `${row}-${column}`;
+    newSeats[`${row}-${column} `] = `${row}-${column}`;
     // Actualiza el estado del archivo JSON con la copia modificada
     setSeats(newSeats);
   }
@@ -150,46 +148,80 @@ function Cinema(props: CinemaProps) {
   // Crea un arreglo vacío para guardar los componentes de las sillas
   let seatComponents = [];
   // Recorre las filas y columnas de la sala y crea un componente de silla por cada una
-  for (let i = 1; i <= rows; i++) {
-    for (let j = 1; j <= columns; j++) {
-      seatComponents.push(
-        <Seat
-          key={`${i}-${j}`}
-          row={i}
-          column={j}
-          addSeat={addSeat}
-          removeSeat={removeSeat}
-        />
-      );
-    }
+
+
+  // for (let i = 1; i <= rows; i++) {
+  //   for (let j = 1; j <= columns; j++) {
+  //     seatComponents.push(
+
+
+  //         <Seat
+  //           key={`${i}-${j}`}
+  //           row={i}
+  //           column={j}
+  //           addSeat={addSeat}
+  //           removeSeat={removeSeat}
+  //         />
+
+
+  //     );
+  //   }
+  // }
+
+  {
+    seatComponents.map((item, index) => (
+      <Seat
+        key={index}
+        row={1}
+        column={2}
+        addSeat={addSeat}
+        removeSeat={removeSeat}
+      />
+    ))
   }
+  let list = [];
+  let listPost = [];
+  for (let i = 0; i < 60; i++) {
+    list.push(`1-${i}`)
+  }
+let post = list;
 
   // Retorna un div con los componentes de las sillas y un botón para exportar el archivo JSON
   return (
     <div>
       <div className="seats">{seatComponents}</div>
+      <div className="grid grid-cols-10" >
+
+        {list.map((item, index) => (
+          <div onClick={()=>{
+            listPost.push(item)
+          }}>
+
+            <h1>{item}</h1>
+          </div>
+        ))}
+      </div>
       <button onClick={exportJSON}>Exportar JSON</button>
     </div>
   );
 }
-
 // Un componente que representa el código principal
 export const SillasView: React.FC = (): ReactElement => {
   return (
     <div className="w-full h-full flex lg:justify-center justify-end lg:items-center bg-white flex-col-reverse lg:flex-row">
       <div className="lg:w-1/2 w-full flex justify-center items-center mt-6 lg:mt-0">
-      <div className="flex flex-col gap-10 items-center w-full">
-            <h1 className="text-blue-001 font-bold lg:text-5xl text-xl">¡Bienvenid@ a la sala de cine!</h1>
-            <SalaSelect/>
-            <h4 className="text-blue-001 text-lg font-thin w-1/2 text-center">
-              Por favor selecciona las sillas que quieras reservar
-            </h4>
-            <Cinema rows={8} columns={10} />
-          </div>
+        <div className="flex flex-col gap-10 items-center w-full">
+          <h1 className="text-blue-001 font-bold lg:text-5xl text-xl">¡Bienvenid@ a la sala de cine!</h1>
+          <SalaSelect />
+          <h4 className="text-blue-001 text-lg font-thin w-1/2 text-center">
+            Por favor selecciona las sillas que quieras reservar
+          </h4>
+          <Cinema rows={8} columns={10} />
+        </div>
       </div>
       <div className="lg:w-1/2 w-full">
         <img src="/resources/cine.png" alt="Imagen de la sala" />
-  
+
       </div>
     </div>
   );
