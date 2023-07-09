@@ -4,6 +4,7 @@ import { LogInView } from "./views/Auth/LogIn";
 import { ReactElement } from "react";
 import { RegisterView } from "./views/Auth/Register";
 import { ResetPasswordView } from './views/Auth/ResetPassword/index';
+import { SillasView } from "./views/cinema/Sillas";
 import { RoutesPathsEnum } from "./helpers/RoutePaths";
 import { Toaster } from "react-hot-toast";
 import { Home } from "./views/Home";
