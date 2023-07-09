@@ -1,9 +1,10 @@
 # Proyecto final 
 
-* Santiago Rios Valero - 20181020017
-* Gabriel David Hernández Vargas - 20181020059                                                            
-* Guillermo Steven Cuesta Castellanos - 20192020102
-* Juan Andrés Guerra Origua - 20181020003
+* Santiago Rios Valero
+* Gabriel David Hernández Vargas                                                            
+* Guillermo Steven Cuesta Castellanos 
+* Juan Andrés Guerra Origua 
+* Oscar Carrillo Gonzalez
 
 En este proyecto se creo una página web en la cual ... . Para el desarrollo, se utilizaron las siguientes herramientas:
 
