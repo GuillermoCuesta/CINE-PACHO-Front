@@ -1,10 +1,15 @@
 import { Form, Formik } from "formik";
+import { ReactElement, useEffect } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
+
 import Button from "../../../components/Button";
-import { ReactElement } from "react";
 import TextInput from "../../../components/Input";
 
 export const LogInView: React.FC = (): ReactElement => {
-  const handleSubmit = async (values: { email: any; password: any; }) => {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleSubmit = async (values: { email: string; password: string; }) => {
     const data = {
       correoUsuario: values.email,
       contrasenaUsuario: values.password,
@@ -25,8 +30,8 @@ export const LogInView: React.FC = (): ReactElement => {
       if (response.ok) {
         // El inicio de sesión fue exitoso
         console.log("Inicio de sesión exitoso");
-        //<Route path=’/auth/login’> Element=<Navigate to=»/Home»/>
-        
+        navigate("/home");
+
       } else if (response.status === 400) {
         // Credenciales inválidas
         console.log("Credenciales de inicio de sesión inválidas");
@@ -39,6 +44,26 @@ export const LogInView: React.FC = (): ReactElement => {
       console.log("Error en la comunicación con la API");
     }
   };
+  // async function tomarDatosAlDevolverse(){
+  //   const result = await navigate("/home");
+  //   navigate("/home", {
+  //     state: {
+  //       token: token,
+  //     },
+  //   });
+  // }
+  // useEffect(() => {
+  //   const token = localStorage.getItem("token");
+  //   if (token) {
+  //       navigate("/home", {
+  //       state: {
+  //         token: token,
+  //       },
+  //     });
+  //   }else{
+  //     console.log(location.state.token)
+  //   }
+  // }, []);
 
   return (
     <div className="relative flex min-h-screen flex-col justify-center overflow-hidden bg-gray-50 py-6 sm:py-12">
