@@ -232,6 +232,7 @@ import { ReactElement, useEffect, useState } from 'react';
 import { MainLayout } from '../../../layouts/MainLayout';
 import { SeatInterface } from './types';
 
+
 export const SillasView: React.FC = (): ReactElement => {
   const [selected, setSelected] = useState(null);
   const [list, setList] = useState<SeatInterface[]>([]);
@@ -255,16 +256,18 @@ export const SillasView: React.FC = (): ReactElement => {
   function intialValues() {
     if (list.length === 0) {
 
-      for (let i = 1; i <= 60; i++) {
-        list.push({
-          seat: `1-${i}`,
-          status: "available",
-        })
+      for (let j =1; j<= 10;j++) {
+        for (let i = 1; i <= 10; i++){ 
+          list.push({
+            seat: `${j}-${i}`,
+            status: "available",
+          })
+        }
       }
     }
   }
-
   intialValues();
+  
 
 
   return (
@@ -309,10 +312,11 @@ export const SillasView: React.FC = (): ReactElement => {
                   </div>
                 ))}
               </div>
+              <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded shadow-lg"onClick={()=>{
+                console.log(listPost)
+              }}>Guardar sillas</button>
+
             </div>
-            <div className='w-10 h-10 bg-blue-600' onClick={()=>{
-               console.log(listPost)
-            } }></div>
           </div>
           <div className='w-1/2'>
             <img src="/resources/cine.png" alt="Imagen de la sala" />
