@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { CardMovie } from '../CardMovie';
+import { MainLayout } from '../../layouts/MainLayout';
 import './index.css';
 
 export const GridMovies = () => {
@@ -22,6 +23,7 @@ export const GridMovies = () => {
   
     return (
         <>
+          <MainLayout>
             <h1 className="text-blue-001 font-bold lg:text-5xl text-xl">{categories}</h1>
             <div className='card-grid-movies'>
                 {
@@ -32,6 +34,7 @@ export const GridMovies = () => {
                     ))
                 }
             </div>
+          </MainLayout>
         </>
 
     

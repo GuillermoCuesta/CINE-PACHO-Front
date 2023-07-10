@@ -9,10 +9,14 @@ export const Home: React.FC = (): ReactElement => {
   return (
     <>
       <MainLayout>
-        <GridCines></GridCines>
-        {/* <GridMovies></GridMovies>
-        //Hay un problema con el key del componente SillasView (abrir consola)
-        <SillasView></SillasView> */}
+        <GridCines>
+          <GridMovies>
+            <SillasView></SillasView>
+          </GridMovies>
+        </GridCines>
+        {/* <GridMovies></GridMovies> */}
+        {/* Hay un problema con el key del componente SillasView (abrir consola) */}
+        {/* <SillasView></SillasView> */}
       </MainLayout>
       {/* <h1>Hola mundo si funciona el home</h1> */}
     </>
