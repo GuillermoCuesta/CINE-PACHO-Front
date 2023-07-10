@@ -3,7 +3,9 @@ enum RoutesPathsEnum {
   LOGIN = "/auth/login",
   REGISTER = "/auth/register",
   RESETPASSWORD = "/auth/reset_password",
-  CINEMA = "/auth/cinema",
+  CINEMA = "/home",
+  PELICULAS = '/components/GridMovies',
+  SILLAS = "/auth/cinema",
 }
 
 

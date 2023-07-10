@@ -5,6 +5,7 @@ import { LogInView } from "./views/Auth/LogIn";
 import { ReactElement } from "react";
 import { RegisterView } from "./views/Auth/Register";
 import { ResetPasswordView } from './views/Auth/ResetPassword/index';
+import { GridMovies } from "./components/GridMovies";
 import { RoutesPathsEnum } from "./helpers/RoutePaths";
 import { SillasView } from "./views/Auth/cinema/Sillas";
 import { Toaster } from "react-hot-toast";
@@ -29,9 +30,15 @@ const App: React.FC = (): ReactElement => {
             element={<ResetPasswordView />}
           />
           <Route path={RoutesPathsEnum.CINEMA}
+            element={<Home />}
+          />
+          <Route path={RoutesPathsEnum.PELICULAS}
+            element={<GridMovies />}
+          />
+          <Route path={RoutesPathsEnum.SILLAS}
             element={<SillasView />}
           />
-          <Route path="*" element={<Navigate replace to="/auth/login" />} />
+          <Route path="*" element={<Navigate replace to="/home" />} />
         </Routes>
       </BrowserRouter>
       <Toaster />
