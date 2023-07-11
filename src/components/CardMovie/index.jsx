@@ -1,5 +1,5 @@
 import React from 'react'
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import './index.css';
 
 
@@ -7,11 +7,14 @@ export const CardMovie = ( {idFuncion,idMultiplex,numSala,idPelicula,estado, fec
     console.log({idFuncion,idMultiplex,numSala,idPelicula,estado, fechaInicio,fechaFin,ubicacion,nombrePelicula,imagenPelicula});
     
     const navigate = useNavigate();
-
-    const handleClick = () => {
-      navigate('/auth/cinema');
+    const location = useLocation();
+    const handleClick = () => {   
+       navigate(`/auth/cinema/${idMultiplex}/${idFuncion}`,{state: {
+        idFuncionSelect:idFuncion,idMultiplexSelect:idMultiplex, 
+        fechInicioSelect:fechaInicio,fechaFinSelect:fechaFin,ubicacionSelect:ubicacion,
+        nombrePeliculaSelect:nombrePelicula,numSalaSelect:numSala
+      },})
     };
-    
     return (
     
     <div className='cardMovie '>

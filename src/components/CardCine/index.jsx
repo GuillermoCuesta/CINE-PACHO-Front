@@ -7,9 +7,11 @@ export const CardCine = ( {direccion,idMultiplex,imagenMultiplex,ubicacion} ) =>
     console.log({direccion,idMultiplex,imagenMultiplex,ubicacion});
     
     const navigate = useNavigate();
-
+    
     const handleClick = () => {
-      navigate('/components/GridMovies');
+      navigate(`/components/GridMovies/${idMultiplex}`,{idMultiplexSelect: {
+        idMultiplex, ubicacionSelect:ubicacion
+      },})
     };
 
     return (

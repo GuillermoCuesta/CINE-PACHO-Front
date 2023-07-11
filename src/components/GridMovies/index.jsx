@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { CardMovie } from '../CardMovie';
 import { MainLayout } from '../../layouts/MainLayout';
+import { useNavigate, useLocation } from 'react-router-dom';
 import './index.css';
 
-export const GridMovies = () => {
+export const GridMovies = (props) => {
   const categories = ['Funciones Disponibles'];
-  
   const [images, setimages] = useState([])
   
   useEffect(() => {
@@ -13,7 +13,6 @@ export const GridMovies = () => {
   }, [])
   
   const getMovies = async() =>{
-
     const url = 'https://webapicinepacho-cinepacho.azurewebsites.net/api/funciones?multiplex=2';
     const resp = await fetch( url );
     const data = await resp.json();

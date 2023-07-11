@@ -228,7 +228,7 @@
 // };
 
 import { ReactElement, useEffect, useState } from 'react';
-
+import { useNavigate, useLocation } from 'react-router-dom';
 import { MainLayout } from '../../../layouts/MainLayout';
 import { SeatInterface } from './types';
 
@@ -237,6 +237,15 @@ export const SillasView: React.FC = (): ReactElement => {
   const [selected, setSelected] = useState(null);
   const [list, setList] = useState<SeatInterface[]>([]);
   const [listPost, setListPost] = useState([]);
+
+  const navigate = useNavigate();
+  const location = useLocation();
+  const handleClick = () => {
+    console.log(location.state);
+    navigate(`/components/Checkout/${location.state.idMultiplex}/${location.state.idFuncion}/${location.state.listPost}`,{state: {
+      ...location.state, listPost:listPost
+    },})
+  };
 
   const salas = [
     { id: 1, name: "Sala 1", seats: 60, available: 60 },
@@ -314,7 +323,8 @@ export const SillasView: React.FC = (): ReactElement => {
               </div>
               <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded shadow-lg"onClick={()=>{
                 console.log(listPost)
-              }}>Guardar sillas</button>
+              }}>Confirmar Sillas</button>
+              <button className="button" onClick={handleClick}>Avanzar</button>
 
             </div>
           </div>

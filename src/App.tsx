@@ -6,6 +6,7 @@ import { ReactElement } from "react";
 import { RegisterView } from "./views/Auth/Register";
 import { ResetPasswordView } from './views/Auth/ResetPassword/index';
 import { GridMovies } from "./components/GridMovies";
+import { Checkout } from "./components/Checkout";
 import { RoutesPathsEnum } from "./helpers/RoutePaths";
 import { SillasView } from "./views/Auth/cinema/Sillas";
 import { Toaster } from "react-hot-toast";
@@ -37,6 +38,9 @@ const App: React.FC = (): ReactElement => {
           />
           <Route path={RoutesPathsEnum.SILLAS}
             element={<SillasView />}
+          />
+          <Route path={RoutesPathsEnum.CHECKOUT}
+            element={<Checkout />}
           />
           <Route path="*" element={<Navigate replace to="/home" />} />
         </Routes>
