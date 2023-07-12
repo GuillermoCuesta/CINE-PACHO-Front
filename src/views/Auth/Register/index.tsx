@@ -49,8 +49,8 @@ export const RegisterView: React.FC = (): ReactElement => {
         <div className="mx-auto max-w-md">
           <h1 className="text-blue-001 font-bold lg:text-5xl text-xl">Registro</h1>
           <img
-            className="w-15 h-15"
-            src="https://w7.pngwing.com/pngs/924/165/png-transparent-note-and-pencil-illustration-computer-icons-icon-design-symbol-registration-miscellaneous-angle-text-thumbnail.png"
+            className="w-30 h-30 rounded-full mx-auto"
+            src="https://images.pexels.com/photos/3921000/pexels-photo-3921000.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
             alt="registrarce"
           />
           <div className="divide-y divide-gray-300/50">
