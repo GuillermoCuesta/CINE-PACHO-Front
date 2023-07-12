@@ -2,21 +2,25 @@ import React, { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { MainLayout } from '../../layouts/MainLayout';
 import './index.css';
-let boletasPref=0;
-let boletasGen=0;
-let total=0;
+
 export const Checkout = () => {
   //const navigate = useNavigate();
+  let boletasPref=0;
+  let boletasGen=0;
+  let total=0;
+  
   const precioGeneral=11000;
   const precioPreferencial=15000;
+  const navigate = useNavigate();
   const location = useLocation();
   const [datos, setDatos] = useState(location.state.listPost);
   const handleClick = () => {
-    console.log(location.state);
-    console.log(location.state.idFuncionSelect);
-    // navigate(`/components/Checkout/${location.state.idMultiplex}/${location.state.idFuncion}/${location.state.listPost}`,{state: {
-    //   ...location.state, listPost:listPost
-    // },})
+    console.log( "Este es el location state desde Checkout")
+    console.log(location.state)
+    navigate(`/components/Pay`,{state: {
+      ...location.state, totalCheckout:total
+    },})
+    { state: null }
   };
   return (
     <>
@@ -50,7 +54,7 @@ export const Checkout = () => {
             <tfoot>
               <tr className='row-1'>
                 <th colSpan="2">Total a Pagar</th>
-                <th colSpan="2">{(boletasGen*precioGeneral+boletasPref*precioPreferencial)+"$"}</th>
+                <th colSpan="2">{(total=boletasGen*precioGeneral+boletasPref*precioPreferencial)+"$"}</th>
               </tr>
             </tfoot>
         </table>

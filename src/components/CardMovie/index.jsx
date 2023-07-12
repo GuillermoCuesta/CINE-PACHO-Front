@@ -8,12 +8,15 @@ export const CardMovie = ( {idFuncion,idMultiplex,numSala,idPelicula,estado, fec
     
     const navigate = useNavigate();
     const location = useLocation();
-    const handleClick = () => {   
+    const handleClick = () => {
+      console.log( "Este es el location state desde CardMovie")
+      console.log(location.state)   
        navigate(`/auth/cinema/${idMultiplex}/${idFuncion}`,{state: {
         idFuncionSelect:idFuncion,idMultiplexSelect:idMultiplex, 
         fechInicioSelect:fechaInicio,fechaFinSelect:fechaFin,ubicacionSelect:ubicacion,
         nombrePeliculaSelect:nombrePelicula,numSalaSelect:numSala
       },})
+      { state: null }
     };
     return (
     
