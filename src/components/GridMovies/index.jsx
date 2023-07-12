@@ -6,14 +6,17 @@ import './index.css';
 
 export const GridMovies = (props) => {
   const categories = ['Funciones Disponibles'];
-  const [images, setimages] = useState([])
-  
+  const [images, setimages] = useState([]);
+  const navigate = useNavigate();
+  const location = useLocation();
+  console.log( "Este es el location state desde GridMovies")
+  console.log(location.state.idMultiplexSelect)
   useEffect(() => {
-    getMovies();
+    getMovies(location.state.idMultiplexSelect);
   }, [])
   
-  const getMovies = async() =>{
-    const url = 'https://webapicinepacho-cinepacho.azurewebsites.net/api/funciones?multiplex=2';
+  const getMovies = async(a) =>{
+    const url = `https://webapicinepacho-cinepacho.azurewebsites.net/api/funciones?multiplex=${a}`;
     const resp = await fetch( url );
     const data = await resp.json();
     console.log(data);
