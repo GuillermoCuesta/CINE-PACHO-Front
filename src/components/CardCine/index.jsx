@@ -9,9 +9,12 @@ export const CardCine = ( {direccion,idMultiplex,imagenMultiplex,ubicacion} ) =>
     const navigate = useNavigate();
     
     const handleClick = () => {
+      console.log( "Este es el location state desde CardCine")
+      console.log(location.state)
       navigate(`/components/GridMovies/${idMultiplex}`,{idMultiplexSelect: {
         idMultiplex, ubicacionSelect:ubicacion
       },})
+      { state: null }
     };
 
     return (

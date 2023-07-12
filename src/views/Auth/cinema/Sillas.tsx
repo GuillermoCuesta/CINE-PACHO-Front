@@ -241,10 +241,12 @@ export const SillasView: React.FC = (): ReactElement => {
   const navigate = useNavigate();
   const location = useLocation();
   const handleClick = () => {
-    console.log(location.state);
+    console.log( "Este es el location state desde Sillas")
+    console.log(location.state)
     navigate(`/components/Checkout/${location.state.idMultiplex}/${location.state.idFuncion}/${location.state.listPost}`,{state: {
       ...location.state, listPost:listPost
     },})
+    { state: null }
   };
 
   const salas = [
