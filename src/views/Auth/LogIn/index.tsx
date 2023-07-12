@@ -4,12 +4,22 @@ import { useLocation, useNavigate } from "react-router-dom";
 
 import Button from "../../../components/Button";
 import TextInput from "../../../components/Input";
+import { useNavigate } from 'react-router-dom';
+
 
 export const LogInView: React.FC = (): ReactElement => {
+
   const navigate = useNavigate();
   const location = useLocation();
 
   const handleSubmit = async (values: { email: string; password: string; }) => {
+
+
+  const navigate = useNavigate();
+  const homeLink = "https://cine-pacho-4e8d3.web.app/home/index";
+
+  const handleSubmit = async (values: { email: any; password: any; }) => {
+
     const data = {
       correoUsuario: values.email,
       contrasenaUsuario: values.password,
@@ -17,22 +27,32 @@ export const LogInView: React.FC = (): ReactElement => {
 
     try {
       const response = await fetch(
-        "https://webapicinepacho.azurewebsites.net/api/usuarios/iniciar-sesion",
+        "https://webapicinepacho-cinepacho.azurewebsites.net/api/usuarios/iniciar-sesion",
         {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Methods': 'GET, HEAD, POST, PUT, DELETE, CONNECT, OPTIONS, TRACE',
+            'Access-Control-Allow-Headers': 'Content-Type, Authorization, X-Requested-With',
           },
           body: JSON.stringify(data),
         }
       );
-
-      if (response.ok) {
+      if (response.status === 200) {
         // El inicio de sesión fue exitoso
         console.log("Inicio de sesión exitoso");
+
         navigate("/home");
 
       } else if (response.status === 400) {
+
+        //navigate('/home');
+        navigate(homeLink);
+
+        window.location.href = "https://cine-pacho-4e8d3.web.app/home/index";      
+      } else if (response.status === 500) {
+
         // Credenciales inválidas
         console.log("Credenciales de inicio de sesión inválidas");
       } else {
@@ -42,6 +62,7 @@ export const LogInView: React.FC = (): ReactElement => {
     } catch (error) {
       // Error en la comunicación con la API
       console.log("Error en la comunicación con la API");
+      //console.log(error);
     }
   };
   // async function tomarDatosAlDevolverse(){

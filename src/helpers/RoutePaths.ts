@@ -3,6 +3,7 @@ enum RoutesPathsEnum {
   LOGIN = "/auth/login",
   REGISTER = "/auth/register",
   RESETPASSWORD = "/auth/reset_password",
+
   CINEMA = "/home",
   PELICULAS = '/components/GridMovies/:idMultiplex',
   SILLAS = "/auth/cinema/:idMultiplex/:idFuncion",
@@ -10,6 +11,9 @@ enum RoutesPathsEnum {
   //Solo se coloca para que funcione el checkout
   CHECKOUT = '/components/Checkout/:idMultiplex/:idFuncion/:listPost',
   PAY = '/components/Pay'
+
+  MULTIPLEX = "/home"
+
 }
 
 

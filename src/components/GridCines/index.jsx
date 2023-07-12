@@ -11,9 +11,12 @@ export const GridCines = () => {
     getCines();
   }, []);
 
+
   const getCines = async () => {
-    const url = 'https://webapicinepacho.azurewebsites.net/api/multiplex';
-    const resp = await fetch(url);
+
+    const url = 'https://webapicinepacho-cinepacho.azurewebsites.net/api/multiplex';
+    const resp = await fetch( url );
+
     const data = await resp.json();
     console.log(data);
     setImages(data);
