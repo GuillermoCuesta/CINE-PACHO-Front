@@ -1,0 +1,65 @@
+/* Estilos para la primera fila del encabezado */
+.table{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+.table-head .row-1 {
+    background-color:#4c1d95;
+    color: white;
+    font-weight: bold;
+    font-size:larger;
+    
+  }
+  
+  /* Estilos para la segunda fila del encabezado */
+  .table-head .row-2 {
+    background-color:#312e81;
+    color: white;
+    font-weight: bold;
+    font-size:larger;
+  }
+  
+  /* Estilos para la tercera fila del encabezado */
+  .table-head .row-3 {
+    background-color:#1e3a8a;
+    color: white;
+    font-weight: bold;
+    font-size:larger;
+}
+  
+  /* Estilos para las filas impares del cuerpo (tbody) */
+  .table-body tr:nth-child(odd) {
+    background-color: #f2f2f2;
+  }
+  
+  /* Estilos para las filas pares del cuerpo (tbody) */
+  .table-body tr:nth-child(even) {
+    background-color: #ffffff;
+  }
+  
+  /* Estilos para las celdas de la tabla */
+  .table-body td,
+  .table-body th {
+    padding: 10px;
+    text-align: center;
+  }
+  
+  /* Estilos para las celdas de la primera columna del cuerpo (tbody) */
+  .table-body td:first-child {
+    background-color: #ddd;
+  }
+  
+  /* Estilos para las celdas de la última columna del cuerpo (tbody) */
+  .table-body td:last-child {
+    background-color: #ccc;
+  }
+  
+  /* Estilos para las celdas con valor "15.000$" */
+  .table-body td:contains("15.000$") {
+    color: green;
+  }
+  
+  /* Estilos para las celdas con valor "11.000$" */
+  .table-body td:contains("11.000$") {
+    color: red;
+  }
+  

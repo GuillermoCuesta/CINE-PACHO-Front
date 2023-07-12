@@ -1,9 +1,34 @@
 import React from 'react'
+import { useNavigate, useLocation } from 'react-router-dom';
 import './index.css';
 
-const CardMovie = () => {
-  return (
-    <div><h2><b>Card Movie</b></h2></div>
+
+export const CardMovie = ( {idFuncion,idMultiplex,numSala,idPelicula,estado, fechaInicio,fechaFin,ubicacion,nombrePelicula,imagenPelicula} ) => {
+    console.log({idFuncion,idMultiplex,numSala,idPelicula,estado, fechaInicio,fechaFin,ubicacion,nombrePelicula,imagenPelicula});
+    
+    const navigate = useNavigate();
+    const location = useLocation();
+    const handleClick = () => {
+      console.log( "Este es el location state desde CardMovie")
+      console.log(location.state)   
+       navigate(`/auth/cinema/${idMultiplex}/${idFuncion}`,{state: {
+        idFuncionSelect:idFuncion,idMultiplexSelect:idMultiplex, 
+        fechInicioSelect:fechaInicio,fechaFinSelect:fechaFin,ubicacionSelect:ubicacion,
+        nombrePeliculaSelect:nombrePelicula,numSalaSelect:numSala
+      },})
+      { state: null }
+    };
+    return (
+    
+    <div className='cardMovie '>
+        <img src={ imagenPelicula } alt={ ubicacion } />
+        <p><b>{ nombrePelicula }</b></p>
+        <p>Sala: { numSala }</p>
+        <p>Estado: { estado }</p> 
+        <p>Inicio: { fechaInicio }</p>
+        <p>Fin: { fechaFin }</p>
+        <p>Ubicación: { ubicacion }</p>
+        <button className="button" onClick={handleClick}>Seleccionar</button>
+    </div>
   )
 }
-export default CardMovie

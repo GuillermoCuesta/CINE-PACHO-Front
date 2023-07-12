@@ -18,7 +18,7 @@ module.exports = {
 				shadowQRScan: "0 0 0 9999px rgba(52, 120, 215, 0.7)",
 			},
 			colors: {
-				// green
+				// green  
 				"green-001": "#5EE8C1",
 				"green-002": "#9EF1DA",
 				"green-003": "#F9FAFB",

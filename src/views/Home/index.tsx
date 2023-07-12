@@ -1,12 +1,22 @@
+import {GridCines} from "../../components/GridCines";
+import {GridMovies} from "../../components/GridMovies";
+import {SillasView} from "../Auth/cinema/Sillas";
+import {Checkout} from "../../components/Checkout";
+import { MainLayout } from '../../layouts/MainLayout';
 import { ReactElement } from "react";
-import GridCines from "../../components/GridCines";
 
 export const Home: React.FC = (): ReactElement => {
 
   return (
     <>
-      {/* <h1>Hola mundo si funciona el home</h1> */}
-      <GridCines></GridCines>
+      <MainLayout>
+        <GridCines>
+          <GridMovies>
+            <SillasView></SillasView>
+            <Checkout></Checkout>
+          </GridMovies>
+        </GridCines>
+      </MainLayout>
     </>
   );
 };
