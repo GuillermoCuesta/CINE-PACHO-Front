@@ -1,5 +1,5 @@
 import { Form, Formik } from "formik";
-import { ReactElement, useEffect } from "react";
+import { ReactElement } from "react";
 import { useNavigate } from "react-router-dom";
 
 import Button from "../../../components/Button";

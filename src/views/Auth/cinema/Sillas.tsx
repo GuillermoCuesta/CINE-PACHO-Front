@@ -227,7 +227,7 @@
 //   );
 // };
 
-import { ReactElement, useEffect, useState } from 'react';
+import { ReactElement, useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { MainLayout } from '../../../layouts/MainLayout';
 import { SeatInterface } from './types';
