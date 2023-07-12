@@ -7,6 +7,10 @@ export const Pay = () => {
   const [numeroTarjeta, setNumeroTarjeta] = useState('');
   const [tipoTarjeta, setTipoTarjeta] = useState('');
   const [mensaje, setMensaje] = useState('');
+  const [nombreCliente, setNombreCliente] = useState('');
+  const [numTelefonoCliente, setNumTelefonoCliente] = useState('');
+  const [cedulaCliente, setCedulaCliente] = useState('');
+
   const navigate = useNavigate();
   const location = useLocation();
   const puntosPelicula = 10;
@@ -15,7 +19,26 @@ export const Pay = () => {
     setNumeroTarjeta(e.target.value);
   };
 
+  const handleChangeNombreCliente = (e) => {
+    setNombreCliente(e.target.value);
+  };
+  
+  const handleChangeNumTelefonoCliente = (e) => {
+    setNumTelefonoCliente(e.target.value);
+  };
+  
+  const handleChangeCedulaCliente = (e) => {
+    setCedulaCliente(e.target.value);
+  };
+  
+
   const handleValidarTarjeta = () => {
+    // Validar campos vacíos
+    if (nombreCliente === '' || numTelefonoCliente === '' || cedulaCliente === '') {
+      setMensaje('Todos los campos son requeridos');return;}
+    if (!(/^\d+$/.test(numTelefonoCliente)) || !(/^\d+$/.test(cedulaCliente))) {
+      setMensaje('El número de teléfono y la cédula deben ser enteros positivos');return; }  
+
     // Validar el tipo de tarjeta
     if (numeroTarjeta.startsWith('4')) {
       setTipoTarjeta('Visa');
@@ -69,6 +92,34 @@ export const Pay = () => {
           onChange={handleChangeNumeroTarjeta}
           placeholder="Ingrese el número de tarjeta Visa o MasterCard"
         />
+
+        <input
+          className={inputClassName}
+          type="text"
+          value={nombreCliente}
+          onChange={handleChangeNombreCliente}
+          placeholder="Ingrese el nombre del cliente"
+        />
+
+        <input
+          className={inputClassName}
+          type="text"
+          value={numTelefonoCliente}
+          onChange={handleChangeNumTelefonoCliente}
+          placeholder="Ingrese el número de teléfono del cliente"
+        />
+
+        <input
+          className={inputClassName}
+          type="text"
+          value={cedulaCliente}
+          onChange={handleChangeCedulaCliente}
+          placeholder="Ingrese la cédula del cliente"
+        />
+
+
+
+
         <button className="transaction-button" onClick={handleValidarTarjeta}>
           Validar
         </button>
@@ -81,8 +132,7 @@ export const Pay = () => {
       </div>
     </MainLayout>
   );
-};
-
+}
 export default Pay;
 
 
