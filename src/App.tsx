@@ -12,10 +12,9 @@ import { Pay } from "./components/Pay";
 import { RoutesPathsEnum } from "./helpers/RoutePaths";
 import { SillasView } from "./views/Auth/cinema/Sillas";
 import { Toaster } from "react-hot-toast";
-p
 
 //import { MultiplexView } from "./views/Auth/Multiplex/multiplex";
-import { Home } from "./views/Home";
+
 
 
 const App: React.FC = (): ReactElement => {
