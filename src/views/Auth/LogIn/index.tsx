@@ -1,22 +1,17 @@
 import { Form, Formik } from "formik";
 import { ReactElement, useEffect } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import Button from "../../../components/Button";
 import TextInput from "../../../components/Input";
-import { useNavigate } from 'react-router-dom';
 
 
 export const LogInView: React.FC = (): ReactElement => {
 
   const navigate = useNavigate();
-  const location = useLocation();
 
-  const handleSubmit = async (values: { email: string; password: string; }) => {
-
-
-  const navigate = useNavigate();
-  const homeLink = "https://cine-pacho-4e8d3.web.app/home/index";
+  // const handleSubmit = async (values: { email: string; password: string; }) => {
+  // const homeLink = "https://cine-pacho-4e8d3.web.app/home/index";
 
   const handleSubmit = async (values: { email: any; password: any; }) => {
 
@@ -45,12 +40,6 @@ export const LogInView: React.FC = (): ReactElement => {
 
         navigate("/home");
 
-      } else if (response.status === 400) {
-
-        //navigate('/home');
-        navigate(homeLink);
-
-        window.location.href = "https://cine-pacho-4e8d3.web.app/home/index";      
       } else if (response.status === 500) {
 
         // Credenciales inválidas
@@ -139,3 +128,4 @@ export const LogInView: React.FC = (): ReactElement => {
     </div>
   );
 };
+

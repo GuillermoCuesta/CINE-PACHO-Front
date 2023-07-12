@@ -10,7 +10,7 @@ enum RoutesPathsEnum {
   //Corregir esta ruta porque obvio no va una lista al final :v
   //Solo se coloca para que funcione el checkout
   CHECKOUT = '/components/Checkout/:idMultiplex/:idFuncion/:listPost',
-  PAY = '/components/Pay'
+  PAY = '/components/Pay',
 
   MULTIPLEX = "/home"
 
